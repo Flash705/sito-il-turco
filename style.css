@@ -1,0 +1,69 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial; background: #f7f7f7; }
+
+header {
+    background: #000;
+    color: #fff;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { font-weight: bold; }
+.hamburger { background: none; border: none; color: #fff; font-size: 22px; }
+
+#overlayMenu {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+    color: #fff; display: none; flex-direction: column;
+}
+
+.overlay-header {
+    display: flex; justify-content: space-between;
+    padding: 16px;
+}
+
+.overlay-nav { display: flex; flex-direction: column; gap: 10px; padding: 16px; }
+.overlay-nav button {
+    background: #111; border: 1px solid #333; padding: 10px;
+    color: #fff; border-radius: 6px;
+}
+
+.hero { padding: 20px; background: #fff; }
+.hero-buttons { display: flex; gap: 10px; }
+
+.btn { padding: 10px 14px; border-radius: 6px; border: none; cursor: pointer; }
+.primary { background: #000; color: #fff; }
+.danger { background: #d62828; color: #fff; }
+.full { width: 100%; }
+
+.section { padding: 20px; background: #fff; margin-top: 10px; }
+
+.gallery-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+
+.gallery-item { background: #eee; padding: 10px; border-radius: 8px; }
+
+.menu-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tab { padding: 6px 12px; border-radius: 20px; border: 1px solid #000; }
+.tab.active { background: #000; color: #fff; }
+
+.menu-category { display: none; }
+.menu-category ul { list-style: none; padding: 0; }
+.menu-category li {
+    display: flex; justify-content: space-between;
+    padding: 6px 0; border-bottom: 1px solid #ddd;
+}
+
+.booking-form { background: #eee; padding: 12px; border-radius: 8px; }
+.form-row { display: flex; flex-direction: column; margin-bottom: 10px; }
+
+.faq-item { background: #eee; padding: 10px; border-radius: 8px; margin-bottom: 8px; cursor: pointer; }
+.faq-body { display: none; }
+
+.info-block { background: #eee; padding: 10px; border-radius: 8px; margin-bottom: 10px; }
+
+.map-wrapper { border-radius: 8px; overflow: hidden; }
+
+footer { background: #000; color: #fff; text-align: center; padding: 16px; }
