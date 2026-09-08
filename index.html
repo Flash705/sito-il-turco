@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Turco - Pizzeria & Kebab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">IL TURCO</div>
+    <button class="hamburger" onclick="openMenu()">☰</button>
+</header>
+
+<div id="overlayMenu">
+    <div class="overlay-header">
+        <span class="overlay-logo">IL TURCO</span>
+        <button class="overlay-close" onclick="closeMenu()">✕</button>
+    </div>
+    <nav class="overlay-nav">
+        <button onclick="goTo('home')">Home</button>
+        <button onclick="goTo('gallery')">Galleria</button>
+        <button onclick="goTo('menu')">Menù</button>
+        <button onclick="goTo('piatti')">Piatti</button>
+        <button onclick="goTo('recensioni')">Recensioni</button>
+        <button onclick="goTo('prenota')">Prenota</button>
+        <button onclick="goTo('faq')">FAQ</button>
+        <button onclick="goTo('info')">Informazioni</button>
+        <button onclick="goTo('dove-siamo')">Dove siamo</button>
+    </nav>
+</div>
+
+<main id="home" class="hero">
+    <section class="hero-top">
+        <h1>IL TURCO</h1>
+        <p class="hero-sub">Pizzeria • Kebab • Specialità turche</p>
+
+        <div class="hero-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-text">Valutazione 4.8 su Google</span>
+        </div>
+
+        <p class="hero-location">Peschiera Borromeo (MI)</p>
+
+        <div class="hero-buttons">
+            <button class="btn primary" onclick="goTo('menu')">Scopri il menù</button>
+            <button class="btn danger" onclick="goTo('prenota')">Prenota ora</button>
+        </div>
+    </section>
+
+    <section class="hero-categories">
+        <button onclick="goTo('gallery')">Galleria</button>
+        <button onclick="goTo('menu')">Menù</button>
+        <button onclick="goTo('piatti')">Piatti</button>
+        <button onclick="goTo('recensioni')">Recensioni</button>
+        <button onclick="goTo('prenota')">Prenotazioni</button>
+        <button onclick="goTo('faq')">FAQ</button>
+        <button onclick="goTo('info')">Informazioni</button>
+        <button onclick="goTo('dove-siamo')">Indicazioni</button>
+    </section>
+</main>
+
+<section id="gallery" class="section">
+    <h2>Galleria</h2>
+    <p class="section-sub">Scopri alcuni dei nostri piatti e del locale.</p>
+
+    <div class="gallery-grid">
+        <article class="gallery-item">
+            <img src="img/kebab.jpg" alt="Kebab">
+            <p>Kebab classico con carne speziata.</p>
+        </article>
+        <article class="gallery-item">
+            <img src="img/pizza-turca.jpg" alt="Pizza turca">
+            <p>Pizza turca con impasto sottile.</p>
+        </article>
+        <article class="gallery-item">
+            <img src="img/pizza.jpg" alt="Pizza">
+            <p>Pizza margherita sempre buonissima.</p>
+        </article>
+        <article class="gallery-item">
+            <img src="img/grill.jpg" alt="Grill">
+            <p>Piatti grill con carne alla griglia.</p>
+        </article>
+    </div>
+</section>
+
+<section id="menu" class="section">
+    <h2>Menù</h2>
+    <p class="section-sub">Seleziona una categoria.</p>
+
+    <div class="menu-tabs">
+        <button class="tab active" data-cat="grill" onclick="showCategory('grill')">Piatti grill</button>
+        <button class="tab" data-cat="pizza-classica" onclick="showCategory('pizza-classica')">Pizza classica</button>
+        <button class="tab" data-cat="pizza-turca" onclick="showCategory('pizza-turca')">Pizza turca</button>
+        <button class="tab" data-cat="kebab" onclick="showCategory('kebab')">Kebab</button>
+        <button class="tab" data-cat="box" onclick="showCategory('box')">Box e contorni</button>
+        <button class="tab" data-cat="dolci" onclick="showCategory('dolci')">Dolci</button>
+        <button class="tab" data-cat="bevande" onclick="showCategory('bevande')">Bevande</button>
+    </div>
+
+    <div class="menu-content">
+        <div class="menu-category" id="cat-grill">
+            <h3>Piatti grill</h3>
+            <ul>
+                <li><span>Mix grill</span><span class="price">€12</span></li>
+                <li><span>Pollo alla griglia</span><span class="price">€10</span></li>
+                <li><span>Spiedini misti</span><span class="price">€9</span></li>
+            </ul>
+        </div>
+
+        <div class="menu-category" id="cat-pizza-classica">
+            <h3>Pizza classica</h3>
+            <ul>
+                <li><span>Margherita</span><span class="price">€6</span></li>
+                <li><span>Diavola</span><span class="price">€7</span></li>
+                <li><span>Prosciutto e funghi</span><span class="price">€7.50</span></li>
+            </ul>
+        </div>
+
+        <div class="menu-category" id="cat-pizza-turca">
+            <h3>Pizza turca</h3>
+            <ul>
+                <li><span>Speciale</span><span class="price">€8</span></li>
+                <li><span>Kebab</span><span class="price">€8.50</span></li>
+            </ul>
+        </div>
+
+        <div class="menu-category" id="cat-kebab">
+            <h3>Kebab</h3>
+            <ul>
+                <li><span>Kebab classico</span><span class="price">€5</span></li>
+                <li><span>Piadina kebab</span><span class="price">€5.50</span></li>
+                <li><span>Kebab piatto</span><span class="price">€7</span></li>
+            </ul>
+        </div>
+
+        <div class="menu-category" id="cat-box">
+            <h3>Box e contorni</h3>
+            <ul>
+                <li><span>Box kebab</span><span class="price">€8</span></li>
+                <li><span>Patatine</span><span class="price">€3</span></li>
+            </ul>
+        </div>
+
+        <div class="menu-category" id="cat-dolci">
+            <h3>Dolci</h3>
+            <ul>
+                <li><span>Baklava</span><span class="price">€4</span></li>
+            </ul>
+        </div>
+
+        <div class="menu-category" id="cat-bevande">
+            <h3>Bevande</h3>
+            <ul>
+                <li><span>Acqua</span><span class="price">€1</span></li>
+                <li><span>Bibite</span><span class="price">€2.50</span></li>
+                <li><span>Birra</span><span class="price">€3.50</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="prenota" class="section">
+    <h2>Prenota un tavolo</h2>
+
+    <form id="bookingForm" class="booking-form">
+        <div class="form-row">
+            <label>Data</label>
+            <input type="date" id="date" required>
+        </div>
+
+        <div class="form-row">
+            <label>Orario</label>
+            <input type="time" id="time" required>
+        </div>
+
+        <div class="form-row">
+            <label>Nome</label>
+            <input type="text" id="name" required>
+        </div>
+
+        <div class="form-row">
+            <label>Cognome</label>
+            <input type="text" id="surname" required>
+        </div>
+
+        <div class="form-row">
+            <label>Telefono</label>
+            <input type="tel" id="phone" required>
+        </div>
+
+        <div class="form-row">
+            <label>Persone</label>
+            <input type="number" id="people" min="1" required>
+        </div>
+
+        <div class="form-row">
+            <label>Note</label>
+            <textarea id="notes"></textarea>
+        </div>
+
+        <button class="btn danger full">Invia su WhatsApp</button>
+    </form>
+</section>
+
+<section id="faq" class="section">
+    <h2>FAQ</h2>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-header">
+            <h3>Fate consegna a domicilio?</h3>
+            <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+            <p>Sì, tramite Deliveroo e Glovo.</p>
+        </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-header">
+            <h3>Accettate pagamenti con carta?</h3>
+            <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+            <p>Sì, accettiamo carte e contanti.</p>
+        </div>
+    </div>
+</section>
+
+<section id="info" class="section">
+    <h2>Informazioni</h2>
+
+    <div class="info-block">
+        <h3>Orari</h3>
+        <p>Lun-Ven: 12:00 - 15:00 / 18:00 - 23:00</p>
+        <p>Sab-Dom: 12:00 - 23:30</p>
+    </div>
+
+    <div class="info-block">
+        <h3>Contatti</h3>
+        <p>Telefono: +39 000 000 0000</p>
+        <p>WhatsApp: +39 300 000 0000</p>
+    </div>
+</section>
+
+<section id="dove-siamo" class="section">
+    <h2>Dove siamo</h2>
+
+    <div class="map-wrapper">
+        <iframe src="https://maps.google.com/maps?q=Peschiera%20Borromeo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="280" style="border:0;"></iframe>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 Il Turco</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
